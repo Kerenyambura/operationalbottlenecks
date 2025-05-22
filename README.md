@@ -33,7 +33,7 @@ ORDER BY breach_rate_percent DESC;
 
 **Insight:** Identifies which issue categories (e.g., Billing, Account Access) are consistently breaching SLA and contributing to customer dissatisfaction.
 
----
+
 
 ## 🔍 2. How does resolution time vary across teams, regions, and issue categories?
 
@@ -53,7 +53,7 @@ ORDER BY avg_resolution_hours DESC;
 
 **Insight:** Surfaces delays by region, team, and issue type to target training or workflow improvements.
 
----
+
 
 ## 📈 3. Which agents consistently close the most tickets?
 
@@ -70,7 +70,7 @@ ORDER BY tickets_closed DESC;
 
 **Insight:** Identifies top performers and those who may need support or redistribution of workload.
 
----
+
 
 ## 📦 4. What percentage of tickets are unresolved beyond SLA thresholds?
 
@@ -94,10 +94,6 @@ WHERE status IN ('Open', 'In Progress');
 
 **Insight:** Aged tickets beyond 14 days are red flags for backlogs and SLA non-compliance.
 
----
-
-
----
 
 ## 🔄 5. How many tickets are bouncing between multiple agents?
 
@@ -114,7 +110,6 @@ HAVING COUNT(DISTINCT tu.updated_by) > 1;
 
 **Insight:** Helps flag poor ownership or collaboration breakdowns that waste time and slow resolution.
 
----
 
 ## 🔁 6. Which tickets have the highest number of status changes?
 
@@ -131,7 +126,6 @@ ORDER BY status_change_count DESC;
 
 **Insight:** Highlights issue types that are hard to resolve or involve too much internal churn.
 
----
 
 ## ⏱️ 7. What is the average time to first response, and how consistent is it across agents?
 
@@ -161,7 +155,6 @@ ORDER BY avg_first_response_minutes DESC;
 
 **Insight:** Early response is critical. This query reveals inconsistencies that can be fixed with training or SOP changes.
 
----
 
 ## 📅 8. How has support ticket volume trended monthly?
 
@@ -176,7 +169,6 @@ ORDER BY month;
 
 **Insight:** Helps leadership visualize workload trends and plan resourcing.
 
----
 
 ## 🌍 9. Which regions or subscription plans are generating the most tickets?
 
@@ -193,7 +185,6 @@ ORDER BY total_tickets DESC;
 
 **Insight:** Certain regions or customer tiers may require dedicated resources or self-service tools.
 
----
 
 ## 👥 10. How many customers have submitted more than 3 tickets?
 
@@ -213,7 +204,6 @@ ORDER BY ticket_count DESC;
 
 **Insight:** Identifies high-frequency users—useful for targeted feedback or account reviews.
 
----
 
 ## 🔁 11. What portion of tickets are from repeat customers?
 
@@ -242,7 +232,6 @@ FROM tickets;
 
 **Insight:** Repeat volume can signal poor resolution quality or deeper service issues.
 
----
 
 ## 🧓 12. What percentage of open tickets are older than 14 days?
 
@@ -266,7 +255,6 @@ WHERE status IN ('Open', 'In Progress');
 
 **Insight:** Aged tickets = neglected issues = churn risk.
 
----
 
 ## 🕒 13. What’s the average time between ticket creation and first update?
 
@@ -288,7 +276,6 @@ FROM first_updates;
 
 **Insight:** Proxy for first response time. Can help define support KPIs.
 
----
 
 ## 🎯 Bonus: Where should we automate to reduce workload by 20%?
 
@@ -306,7 +293,7 @@ ORDER BY ticket_count DESC;
 
 **Insight:** Target high-volume regions/categories for automation or tiered support.
 
----
+
 
 ## ⚙️ Bonus: What if we restructured teams based on regional performance?
 
