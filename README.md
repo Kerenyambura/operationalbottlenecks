@@ -3,7 +3,6 @@
 
 This page documents the full SQL audit performed on a fictional support ticket system. Each query was designed to answer a specific operational question and uncover bottlenecks, inefficiencies, or opportunities for support optimization.
 
----
 
 ## 🔎 1. Which ticket categories are driving the highest SLA breach rates?
 
